@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Paper, Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
+import { Box, Paper, Typography, TextField, Button, CircularProgress, Alert, InputAdornment, IconButton } from '@mui/material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/api';
 
@@ -8,6 +9,7 @@ export default function Login({ setAuth }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -87,11 +89,24 @@ export default function Login({ setAuth }) {
             fullWidth
             label="Password"
             variant="outlined"
-            type="password"
+            type={showPassword ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
             sx={{ mb: 4, '& .MuiOutlinedInput-root': { borderRadius: 2 } }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={() => setShowPassword(!showPassword)}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
           />
           
           <Button
