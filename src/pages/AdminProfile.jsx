@@ -78,8 +78,6 @@ export default function AdminProfile({ adminUser, onLogout }) {
             color: 'white', 
             position: 'relative', 
             overflow: 'hidden', 
-            transition: 'transform 0.2s',
-            '&:hover': { transform: 'scale(1.02)' },
             boxSizing: 'border-box'
           }}>
             <SecurityIcon sx={{ position: 'absolute', right: -15, bottom: -15, fontSize: 130, opacity: 0.15 }} />
