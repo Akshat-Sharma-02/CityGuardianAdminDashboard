@@ -152,7 +152,7 @@ export default function Dashboard() {
                 DASHBOARD OVERVIEW
               </Typography>
               <Typography variant="h3" sx={{ fontWeight: 800, letterSpacing: '-1px', mb: { xs: 0.5, xl: 1 }, fontSize: { xs: '1.4rem', sm: '1.6rem', md: '1.8rem', xl: '2.5rem' } }}>
-                Welcome back, {adminUser.name.split(' ')[0]}!
+                Welcome back, {adminUser.name}!
               </Typography>
               <Typography variant="subtitle1" sx={{ opacity: 0.9, fontWeight: 500, maxWidth: { xs: '100%', md: '85%' }, mb: { xs: 1.5, xl: 2.5 }, lineHeight: 1.2, fontSize: { xs: '0.8rem', md: '0.85rem', xl: '1rem' } }}>
                 There are {stats.pendingReports} new citizen reports requiring your immediate verification today.
