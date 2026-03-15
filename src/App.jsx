@@ -219,7 +219,7 @@ function App() {
             <Route path="/map" element={<MapAnalytics />} />
             <Route path="/support" element={<HelpSupport />} />
             <Route path="/rewards" element={<RewardManagement />} />
-            <Route path="/profile" element={<AdminProfile adminUser={adminUser} onLogout={handleLogout} />} />
+            <Route path="/profile" element={<AdminProfile adminUser={adminUser} onLogout={handleLogout} setAdminUser={setAdminUser} />} />
           </Routes>
         </Box>
       </Box>
